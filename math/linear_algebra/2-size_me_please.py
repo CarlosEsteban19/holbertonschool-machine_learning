@@ -2,7 +2,11 @@
 
 def matrix_shape(matrix):
     rows = len(matrix)
-    columns = len(matrix[0])
+
+    try:
+        columns = len(matrix[0])
+    except TypeError:
+        return [rows]
 
     try:
         depth = len(matrix[0][0])
