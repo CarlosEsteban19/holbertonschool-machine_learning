@@ -4,16 +4,9 @@
 
 def matrix_shape(matrix):
     """calculates the shape of a matrix"""
-    rows = len(matrix)
-
-    try:
-        columns = len(matrix[0])
-    except TypeError:
-        return [rows]
-
-    try:
-        depth = len(matrix[0][0])
-    except TypeError:
-        return [rows] + [columns]
-
-    return [rows] + [columns] + [depth]
+    shape = []
+    while isinstance(matrix[0], list):
+        shape.append(len(matrix))
+        matrix = matrix[0]
+    shape.append(len(matrix))
+    return shape
