@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 import numpy as np
 import matplotlib.pyplot as plt
+"""plotting task 5"""
 
 
 def all_in_one():
-
+    """5 plot madness"""
     y0 = np.arange(0, 11) ** 3
 
     mean = [69, 0]
