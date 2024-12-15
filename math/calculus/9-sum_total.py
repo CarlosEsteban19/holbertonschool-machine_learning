@@ -15,5 +15,5 @@ def summation_i_squared(n):
     # Recursioooooon (not a loop :D)
     # return n**2 + summation_i_squared(n - 1)
 
-    # Using formula for the sum of squares because of RecursionError -___-
+    # Using sum of squares because of RecursionError -___-
     return (n * (n + 1) * (2 * n + 1)) // 6
