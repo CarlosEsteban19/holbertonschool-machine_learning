@@ -18,10 +18,10 @@ def bars():
     plt.bar(names, arr1, width=0.5, color="red")
     plt.bar(names, arr2, width=0.5, bottom=arr1, color="yellow")
     plt.bar(names, arr3, width=0.5, bottom=arr1 + arr2, color="#ff8000")
-    plt.bar(names, arr4, width=0.5, bottom=arr1 + arr2 + arr3, color="ffe5b4")
+    plt.bar(names, arr4, width=0.5, bottom=arr1 + arr2 + arr3, color="#ffe5b4")
 
     plt.ylim(0, 80)
     plt.title("Number of Fruit per Person")
     plt.ylabel("Quantity of Fruit")
-    plt.legend("apples", "bananas", "oranges", "peaches")
+    plt.legend(["apples", "bananas", "oranges", "peaches"])
     plt.show()
