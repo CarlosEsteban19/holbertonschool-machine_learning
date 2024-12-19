@@ -4,7 +4,7 @@ import numpy as np
 
 
 class Node:
-    """Node"""
+    """Node class"""
     def __init__(self, feature=None, threshold=None, left_child=None,
                  right_child=None, is_root=False, depth=0):
         self.feature = feature
@@ -17,7 +17,7 @@ class Node:
         self.depth = depth
 
     def max_depth_below(self):
-        """max depth"""
+        """max depth below method"""
         if self.is_leaf:
             return self.depth
         else:
@@ -26,7 +26,7 @@ class Node:
 
 
 class Leaf(Node):
-    """Leaf"""
+    """Leaf class"""
     def __init__(self, value, depth=None):
         super().__init__()
         self.value = value
@@ -34,12 +34,12 @@ class Leaf(Node):
         self.depth = depth
 
     def max_depth_below(self):
-        """max depth"""
+        """max depth below method"""
         return self.depth
 
 
 class Decision_Tree():
-    """Decision tree"""
+    """Decision tree class"""
     def __init__(self, max_depth=10, min_pop=1, seed=0,
                  split_criterion="random", root=None):
         self.rng = np.random.default_rng(seed)
@@ -55,5 +55,5 @@ class Decision_Tree():
         self.predict = None
 
     def depth(self):
-        """depth"""
+        """depth method"""
         return self.root.max_depth_below()
