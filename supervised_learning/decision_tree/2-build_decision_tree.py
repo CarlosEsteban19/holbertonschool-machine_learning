@@ -38,6 +38,22 @@ class Node:
             return left_count + right_count
         return 1 + left_count + right_count
 
+    def left_child_add_prefix(self, text):
+        """Add prefix for left child"""
+        lines = text.split("\n")
+        new_text = "    +--" + lines[0] + "\n"
+        for x in lines[1:]:
+            new_text += ("    |  " + x) + "\n"
+        return new_text
+
+    def right_child_add_prefix(self, text):
+        """Add prefix for right child"""
+        lines = text.split("\n")
+        new_text = "    +--" + lines[0] + "\n"
+        for x in lines[1:]:
+            new_text += ("       " + x) + "\n"
+        return new_text
+
     def __str__(self):
         """String representation of the node and its children"""
         if self.is_leaf:
