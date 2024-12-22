@@ -56,17 +56,17 @@ class Node:
 
     def __str__(self):
         """String representation of the node and its children"""
+        label = "root" if self.is_root else "node"
         if self.is_leaf:
-            return f"-> leaf [value={self.sub_population}]"
+            return f"leaf [value={self.sub_population}]"
         else:
             left_str = self.left_child_add_prefix(
                 str(self.left_child)) if self.left_child else ""
             right_str = self.right_child_add_prefix(
                 str(self.right_child)) if self.right_child else ""
-            return (
-                f"root [feature={self.feature}, threshold={self.threshold}]\n"
-                f"{left_str}{right_str}").strip()
-
+            return (f"{label} [feature={self.feature},\
+                    threshold={self.threshold}]\n"
+                    f"{left_str}{right_str}").strip()
 
 
 class Leaf(Node):
