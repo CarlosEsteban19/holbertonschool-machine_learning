@@ -59,11 +59,10 @@ class Node:
 def left_child_add_prefix(text):
     """left child prefix method"""
     lines = text.split("\n")
-    new_text = "    +---> " + lines[0] + "\n"
+    new_text = "    +--"+lines[0]+"\n"
     for x in lines[1:]:
-        if x.strip():
-            new_text += "    |      " + x + "\n"
-    return new_text
+        new_text += ("    |  "+x)+"\n"
+    return (new_text)
 
 
 def right_child_add_prefix(text):
@@ -72,7 +71,7 @@ def right_child_add_prefix(text):
     new_text = "    +---> " + lines[0] + "\n"
     for x in lines[1:]:
         if x.strip():
-            new_text += "           " + x + "\n"
+            new_text += "       " + x + "\n"
     return new_text
 
 
