@@ -45,11 +45,9 @@ class Node:
     def __str__(self):
         """str rep method"""
         if self.is_root:
-            node_str = f"root [feature={self.feature}\
-                , threshold={self.threshold}]\n"
+            node_str = f"root [feature={self.feature}, threshold={self.threshold}]\n"
         else:
-            node_str = f"node [feature={self.feature}\
-                , threshold={self.threshold}]\n"
+            node_str = f"node [feature={self.feature}, threshold={self.threshold}]\n"
 
         if self.left_child:
             node_str += left_child_add_prefix(self.left_child.__str__())
@@ -64,7 +62,7 @@ def left_child_add_prefix(text):
     new_text = "    +---> " + lines[0] + "\n"
     for x in lines[1:]:
         if x.strip():
-            new_text += ("    |      " + x) + "\n"
+            new_text += "    |      " + x + "\n"
     return new_text
 
 
@@ -74,7 +72,7 @@ def right_child_add_prefix(text):
     new_text = "    +---> " + lines[0] + "\n"
     for x in lines[1:]:
         if x.strip():
-            new_text += ("           " + x) + "\n"
+            new_text += "           " + x + "\n"
     return new_text
 
 
