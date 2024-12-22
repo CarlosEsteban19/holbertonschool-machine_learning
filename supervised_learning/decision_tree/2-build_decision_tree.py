@@ -64,8 +64,8 @@ class Node:
                 str(self.left_child)) if self.left_child else ""
             right_str = self.right_child_add_prefix(
                 str(self.right_child)) if self.right_child else ""
-            return (f"{label} [feature={self.feature},\
-                    threshold={self.threshold}]\n"
+            return (f"{
+                label} [feature={self.feature}, threshold={self.threshold}]\n"
                     f"{left_str}{right_str}").strip()
 
 
