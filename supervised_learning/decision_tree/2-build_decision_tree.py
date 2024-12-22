@@ -62,7 +62,7 @@ class Node:
         right_str = self.right_child_add_prefix(
             str(self.right_child)) if self.right_child else ""
         return f"{label} [feature={self.feature}, threshold=\
-            {self.threshold}]\n{left_str}{right_str}".strip()
+{self.threshold}]\n{left_str}{right_str}".strip()
 
 
 class Leaf(Node):
