@@ -77,6 +77,7 @@ class Node:
         return leaves
 
     def update_indicator(self):
+        """update indicator method"""
         def is_large_enough(x):
             """is large enough method"""
             return np.all(np.array([np.greater(x[:, key], self.lower[key])
