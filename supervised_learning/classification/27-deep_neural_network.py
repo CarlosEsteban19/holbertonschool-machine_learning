@@ -165,3 +165,13 @@ class DeepNeuralNetwork:
                 return obj
         except FileNotFoundError:
             return None
+
+    def sigmoid(self, z):
+        """Applies the sigmoid activation function"""
+        y_hat = 1 / (1 + np.exp(-z))
+        return y_hat
+
+    def softmax(self, z):
+        """Applies the softmax activation function"""
+        y_hat = np.exp(z - np.max(z))
+        return y_hat / y_hat.sum(axis=0)
