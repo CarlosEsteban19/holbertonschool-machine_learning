@@ -10,5 +10,5 @@ def save_model(network, filename):
 
 def load_model(filename):
     """Loads an entire Keras model from a file."""
-    model = load_model(filename)
+    model = K.models.load_model(filename)
     return model
