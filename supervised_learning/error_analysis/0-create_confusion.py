@@ -9,7 +9,7 @@ def create_confusion_matrix(labels, logits):
     """
     classes = labels.shape[1]
 
-    confusion = np.zeros((classes, classes), dtype=int)
+    confusion = np.zeros((classes, classes), dtype=float)
 
     for true_label, predicted_label in zip(labels, logits):
         true_class = np.argmax(true_label)
