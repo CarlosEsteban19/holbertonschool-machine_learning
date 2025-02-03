@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """holberton regularization"""
 import numpy as np
-import tensorflow as tf
 
 
 def dropout_forward_prop(X, weights, L, keep_prob):
@@ -12,11 +11,12 @@ def dropout_forward_prop(X, weights, L, keep_prob):
     A = X
     cache['A0'] = A
 
-    for i in range(1, L+1):
+    for i in range(1, L + 1):
         Z = np.dot(weights['W' + str(i)], A) + weights['b' + str(i)]
 
         if i == L:
-            A = tf.nn.softmax(Z).numpy()
+            exp_Z = np.exp(Z - np.max(Z, axis=0, keepdims=True))
+            A = exp_Z / np.sum(exp_Z, axis=0, keepdims=True)
         else:
             A = np.tanh(Z)
 
